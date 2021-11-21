@@ -1,0 +1,90 @@
+<div class="wrapper">
+  
+    <!-- Page Header Start -->
+    <div class="page-header" id="content">
+        <div class="container" >
+            <div class="row">
+                <div class="col-12">
+                    <h2>Répondre à tous vos besoins.</h2>
+                </div>
+                <div class="col-12">
+                    <a href="" routerLink="home" >Acceuil</a>
+                    <a href="">Question</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Devis Start -->
+    <div class="contact wow fadeInUp" id="content2">
+        <div class="container">
+            <div class="section-header text-center">
+                <p style="color:#030f27 ">Si vous ayez besoin d'une information précise sur une maladie, nous serons
+                    heureux et disponible pour vous répondre dans les plus brefs délais.</p>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="flaticon-address"></i>
+                            <div class="contact-text">
+                                <h2>Notre adresse</h2>
+                                <p>Rue, Tunis ..</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="flaticon-call"></i>
+                            <div class="contact-text">
+                                <h2>Téléphone</h2>
+                                <p>+216 00 000 000</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="flaticon-send-mail"></i>
+                            <div class="contact-text">
+                                <h2>Email</h2>
+                                <p>Contact@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                           
+                            <div class="control-group">
+                                <input type="text" class="form-control" name="nomprenom" id="name" placeholder="Nom et prénom" [(ngModel)]="devis.nomprenom" required="required" data-validation-required-message="S'il vous plaît entrez votre nom" />
+                                
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Votre E-mail" required="required" [(ngModel)]="devis.email"
+                                data-validation-required-message="S'il vous plaît entrez votre email" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control"  name="sujet"id="subject" placeholder="Sujet" required="required" [(ngModel)]="devis.sujet" data-validation-required-message="Veuillez saisir un sujet" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" id="message" name="description" placeholder="Votre message détaillé isi" required="required" [(ngModel)]="devis.description" data-validation-required-message="Veuillez saisir votre message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button (click)="saveDevis()"  class="btn" type="submit" id="sendMessageButton">Envoyer le message</button>
+                            </div>
+                            <div class="alert alert-success alert-dismissible" *ngIf="isSuccessful" >
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                 Demande de question envoyée avec succées!
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Devis End -->

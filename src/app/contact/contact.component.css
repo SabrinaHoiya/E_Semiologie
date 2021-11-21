@@ -1,0 +1,10 @@
+div#content {
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+}
+
+div#content2 {
+    background-color: rgba(255,255,255,0.3);
+    background-blend-mode: lighten;
+    /* You may add things like width, height, background-size... */
+}

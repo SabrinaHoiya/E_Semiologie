@@ -1,0 +1,56 @@
+<div class="list row">
+    <div class="col-md-6">
+        <h4>Liste des Questions</h4>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let devis of tutorials; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveTutorial( devis, i)"
+            
+          >
+            {{ devis.sujet }}
+          </li>
+        </ul>
+    
+      </div>
+      <div class="col-md-6">
+        <div *ngIf="currentTutorial">
+          <h4>Question:</h4>
+          <div>
+            <label><strong>Sujet:</strong></label> {{ currentTutorial.sujet }}
+          </div>
+          <div>
+            <label><strong>Description:</strong></label>
+            {{ currentTutorial.description }}
+          </div>
+          <div>
+            <label><strong>Email:</strong></label>
+            {{ currentTutorial.email }}
+          </div>
+          <div>
+            <label><strong>Nom&Prénom:</strong></label>
+            {{ currentTutorial.nomprenom }}
+          </div>
+          
+          <button class="btn animated fadeInUp" (click)="deleteTutorial()">
+            Supprimer
+          </button>
+          <button class="btn animated fadeInUp mr-2" (click)="repondre()" >
+            Répondre
+          </button>
+          
+          
+        </div>
+    
+        <div *ngIf="!currentTutorial">
+          <br />
+          <p>Veuillez choisir une question </p>
+        </div>
+        <div class="alert alert-success alert-dismissible" *ngIf="isSuccessful" >
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+           Suppression avec succées.
+           </div>
+    </div>
+    </div>
+    

@@ -1,0 +1,202 @@
+ <!-- Single Post Start-->
+ <div class="single">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8">
+              <div class="single-content wow fadeInUp">
+                <div>
+                <img src="./champignon.jpg"/>
+               
+                  <h2>Informations sur la maladie</h2>
+                  <br>
+                  <p>.</p>      
+                </div>
+                  <div class="container">
+                      <div class="card" style="width: 36rem;"> 
+
+                    <table style="width:100%" cellspacing="30" cellpadding="10">
+                        <div *ngIf="chantier">
+                      <tr>
+                      <td> 
+                         <div class="contact-text1">
+                          <h5><i class='fas fa-user-circle' style='font-size:36px ;color:#fa7c00'></i>  CLIENT</h5>
+                          <p>Et</p>
+                         </div>
+                      </td>
+                      <td></td>  
+                      <td>
+                          <div class="contact-text1">
+                           <h5> <i class="fas fa-map-marker-alt" style='font-size:36px ;color:#fa7c00'></i>  REGION</h5>
+                           <p></p>
+                          </div>
+                       </td>
+                       </tr>
+                       <tr>
+                          <td>
+                             <div class="contact-text1">
+                              <h5><i class="fas fa-cog" style='font-size:36px ;color:#fa7c00'></i>  TYPE TRAVAUX</h5>
+                              <p></p>
+                             </div>
+                          </td>
+                          <td></td>
+                          <td>
+                              <div class="contact-text1">
+                               <h5> <i class="fas fa-home" style='font-size:36px ;color:#fa7c00'></i>  TYPE PROJET</h5>
+                               <p></p>
+                              </div>
+
+                           </td>
+                       
+                           </tr>
+                        </div>   
+                       </table>
+                       </div>
+                       </div>
+                       
+                       <br> <br> 
+                   <h4>Médicaments</h4>
+                   <div *ngIf="chantier">
+                   <p>AZ Plastering a participé par la pose de plaques de plâtre pour le cloisonnement au chantier de construction de {{chantier.name}}</p>
+                   </div>
+                   <table style="width:40%" cellspacing="30" cellpadding="10">
+           
+                   <tr>
+                      <td>
+                          <div class="post-img2">
+                              <img src="./assets/img/prod2.jpg" />
+
+                          </div>
+                          
+                      </td>
+                       <td>
+                          <div class="post-img2">
+                            <img src="./champignon.jpg" />
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+             
+              <br> <br>
+             
+              <div class="comment-form wow fadeInUp">
+                  <h2>Laisser un commentaire</h2>
+                  <form>
+                      <div class="form-group">
+                          <label for="name">Nom *</label>
+                          <input type="text" class="form-control" id="name">
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email *</label>
+                          <input type="email" class="form-control" id="email">
+                      </div>
+                      <div class="form-group">
+                          <label for="website">Chantier</label>
+                          <input type="url" class="form-control" id="website">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="message">Message *</label>
+                          <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <input type="submit" value="Envoyer Commentaire" class="btn">
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+          <div class="col-lg-4">
+              <div class="sidebar">
+                  <div class="sidebar-widget wow fadeInUp">
+                      <div class="search-widget">
+                          <form>
+                              <input class="form-control" type="text" placeholder="Rechercher... ">
+                              <button class="btn"><i class="fa fa-search"></i></button>
+                          </form>
+                      </div>
+                  </div>
+
+                  <div class="sidebar-widget wow fadeInUp">
+                      <!--h2 class="widget-title">Recent Post</h2-->
+                      <div class="recent-post">
+                      <div *ngIf="chantier">
+                          <div class="post-item">
+                              <div class="post-img1">
+                                <img src="data:image/png;base64,{{chantier.filePath2}}"/>
+                              </div>
+                          
+                          </div>
+                          <div class="post-item">
+                              <div class="post-img1">
+                                <img src="data:image/png;base64,{{chantier.filePath3}}"/>
+                              </div>
+                             
+                          </div>
+                          <div class="post-item">
+                              <div class="post-img1">
+                                <img src="data:image/png;base64,{{chantier.filePath4}}"/>
+                              </div>
+                             
+                          </div>
+                          <div class="post-item">
+                              <div class="post-img1">
+                                <img src="data:image/png;base64,{{chantier.filePath5}}"/>
+                              </div>
+                          
+                          </div>
+                        </div> 
+                      </div>
+                  </div>
+
+              
+
+                  <div class="sidebar-widget wow fadeInUp">
+                    <div class="tab-post">
+                        <ul class="nav nav-pills nav-justified">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#featured"> <b> Autres références </b> </a>
+                            </li>
+                            
+                        </ul>
+
+                          <div class="tab-content">
+                              <div id="featured"  class="container tab-pane active">
+                                <div *ngFor="let chantier of chantiers">
+                                  <div class="post-item">
+                                      <div class="post-img">
+                                        <img src="data:image/png;base64,{{chantier.filePath}}"style="width:180px;height:100px;"/>
+                                      </div>
+                                      <div class="post-text">
+                                          <a href="">{{chantier.name}}</a>
+                                          <div class="post-meta">
+                                              <p>{{chantier.type_projet}}</p>
+                                              
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                                 </div>
+                                  
+                
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
